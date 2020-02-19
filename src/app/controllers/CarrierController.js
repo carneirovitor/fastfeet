@@ -61,7 +61,9 @@ class CarrierController {
       const carrierExists = await Carrier.findOne({ where: { email } });
 
       if (carrierExists) {
-        return res.status(400).json({ error: 'This email is already in use.' });
+        return res
+          .status(400)
+          .json({ error: 'This email is already being used.' });
       }
     }
 

@@ -101,7 +101,7 @@ class CarrierDeliveriesController {
 
       if (n_orders > 5) {
         return res.status(401).json({
-          error: 'You only can pickup 5 packages in a day',
+          error: 'You can only pickup 5 packages in a day',
         });
       }
 
@@ -109,7 +109,7 @@ class CarrierDeliveriesController {
 
       if (startDateHour > 18 || startDateHour < 8) {
         return res.status(401).json({
-          error: 'You only can pickup a package between 08:00a.m and 06:00p.m.',
+          error: 'You can only pickup packages between 08:00a.m and 06:00p.m.',
         });
       }
 
@@ -134,7 +134,7 @@ class CarrierDeliveriesController {
       if (!signature_id) {
         return res.status(401).json({
           error:
-            'You only can finish a delivery uploading a signature of receiver',
+            "You can only conclude delivery if package receiver's signature is uploaded.",
         });
       }
 

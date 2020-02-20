@@ -90,7 +90,6 @@ class OrderController {
       return res.status(400).json({ error: 'Invalid Order' });
     }
 
-    console.log(orderIssue.order_id);
     await order.update(req.body);
 
     const carrier = await Carrier.findByPk(order.carrier_id);
